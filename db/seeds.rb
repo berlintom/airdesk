@@ -9,7 +9,7 @@ puts "creating users..."
 50.times do
   user = User.new(
     first_name: Faker::Internet.first_name,
-    last_name: Faker::Name.last_name
+    last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     phone_number: Faker::PhoneNumber.phone_number,
