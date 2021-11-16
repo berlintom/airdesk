@@ -1,5 +1,6 @@
 class DesksController < ApplicationController
-  # show all desks
+  skip_before_action :authenticate_user!, only: [:home, :index, :show]
+
   def index
     @desks = Desk.all
   end
