@@ -9,11 +9,10 @@
 <body>
   <div class="container">
     <h1>Showing you all Desks</h1>
-
       <% @desks.each do |desk| %>
-        <ul>
-          <li><%= desk.title %></li> <!-- <%= link_to 'Show', desk %> -->
-        </ul>
+        <li>
+          <%=link_to desk.title, desk_path(desk) %>
+        </li>
       <% end %>
   </div>
 </body>
