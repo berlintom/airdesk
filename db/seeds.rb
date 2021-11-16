@@ -12,22 +12,22 @@ puts "creating users..."
     last_name: Faker::Name.last_name
     email: Faker::Internet.email,
     password: Faker::Internet.password,
-    phone_number: Faker::PhoneNumber.phone_number
-    description: Faker::Lorem.sentence,
+    phone_number: Faker::PhoneNumber.phone_number,
+    description: Faker::Lorem.sentence
   )
   user.save
 end
 
 puts "creating desks..."
 
-# Seeds for
+# Seeds for Desks
 
 100.times do
   desk = Desk.new(
     title: Faker::FunnyName.title,
     address: Faker::Address.full_address,
     description: Faker::Lorem.sentence,
-    price: Faker::Commerce.price #=> 44.6
+    price: rand(500..2000)
   )
   desk.save
 end
