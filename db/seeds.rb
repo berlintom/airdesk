@@ -2,9 +2,9 @@ puts "cleaning DB..."
 User.destroy_all
 Desk.destroy_all
 
-puts "creating users..."
+puts "creating users and desks"
 
-# Seeds for Users
+# Seeds for Users and Desks
 
 50.times do
   user = User.new(
@@ -16,18 +16,13 @@ puts "creating users..."
     description: Faker::Lorem.sentence
   )
   user.save
-end
 
-puts "creating desks..."
-
-# Seeds for Desks
-
-100.times do
   desk = Desk.new(
     title: Faker::FunnyName.title,
     address: Faker::Address.full_address,
     description: Faker::Lorem.sentence,
-    price: rand(500..2000)
+    price: rand(500..2000),
+    user: user
   )
   desk.save
 end
