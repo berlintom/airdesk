@@ -15,7 +15,9 @@
   <body>
   <div class="page-container">
     <div class="navbar-container">
-      <%= render "layouts/navbar" %>
+        <% if params[:action] != "home" %>
+       <%= render "layouts/navbar" %>
+       <% end %>
     </div>
     <div class="content-container">
       <%= yield %>
@@ -23,8 +25,11 @@
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
     <div class="footer-container">
+      <% if params[:action] != "home" %>
       <%= render "layouts/footer" %>
+       <% end %>
     </div>
   </div>
+ 
   </body>
 </html>
