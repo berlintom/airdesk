@@ -1,11 +1,17 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .card-trip {
+  align-items: center;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  flex-grow: 1;
   padding: 15px;
   width: 33%;
-  flex-wrap: wrap;
+  margin-bottom: 10px;
+  margin-top: 15px;
 }
 
 .card-trip > img {

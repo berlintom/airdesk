@@ -14,21 +14,24 @@
       </div>
     </div>
   </div>
-  <div class="container">
-      <div class="card-trip d flex">
+    <div class="container">
+      <div class="cards">
         <% @desks.each do |desk| %>
-      <%= cl_image_tag desk.photo.key %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%=link_to desk.title, desk_path(desk) %></h2>
-          <p><%=desk.description%></p>
-        </div>
-        <h2 class="card-trip-pricing"><%= (desk.price/100).round%>€</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <div class="card-trip">
+            <%= cl_image_tag desk.photo.key %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%=link_to desk.title, desk_path(desk) %></h2>
+                <p><%=desk.description%></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= (desk.price/100).round%>€</h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            </div>
+            </div>
+          <% end %>
+
       </div>
-      <% end %>
     </div>
   </div>
-</div>
 </body>
 </html>
