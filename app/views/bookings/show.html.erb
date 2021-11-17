@@ -2,7 +2,7 @@
   <div class="booking-show-card">
     <h2>Your booked the "<%= @desk.title %>" desk!</h2>
     <hr>
-    <%= cl_image_tag(@desk.photo.key, width: 400, crop: :fill) %>
+    <%= cl_image_tag(@desk.photo.key, width: 400, height: 300, crop: :fill) %>
     <hr>
     <h5>Date: <%= @booking.booked_on %></h5>
     <hr>
