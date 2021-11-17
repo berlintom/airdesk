@@ -13,10 +13,14 @@
   </head>
 
   <body>
+    <% if params[:action] != "home" %>
     <%= render "layouts/navbar" %>
+    <% end %>
     <%= yield %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+    <% if params[:action] != "home" %>
     <%= render "layouts/footer" %>
+    <% end %>
   </body>
 </html>

@@ -1,2 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="d-flex flex-column min-vh-100">
+<%= render "./layouts/navbar" %>
+<div class="banner flex-grow-1" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.peerspace.com/resources/wp-content/uploads/Private-Day-Office-on-Chicago-rental.jpg);">
+  <div class="container">
+    <h1>Dream Desks - find your <strong>ideal buddy and workspace</strong> in a <strong>matter of clicks</strong> in your neighbourhood!</h1>
+    <p>Change your life and explore the new way of working.</p>
+    <a class="btn btn-flat">Find your Dream Desk</a>
+  </div>
+</div>
+<%= render "./layouts/footer" %>
+</div>
