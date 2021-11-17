@@ -9,7 +9,7 @@ puts "creating users and desks"
 
 # Seeds for Users and Desks
 
-50.times do
+15.times do
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -18,6 +18,7 @@ puts "creating users and desks"
     phone_number: Faker::PhoneNumber.phone_number,
     description: Faker::Lorem.sentence(word_count: 10)
   )
+  user.photo.attach(io: file = URI.open("https://source.unsplash.com/featured/?face"), filename: "face", content_type: 'image/png')
   user.save
 
   desk = Desk.new(

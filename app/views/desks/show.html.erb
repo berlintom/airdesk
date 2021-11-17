@@ -2,6 +2,6 @@
 <p><%= @desk.description %></p>
 <p><%= @desk.address %></p>
 <h3><%= @desk.price %></h3>
-<p><%= @desk.user.first_name %></p>
+<%= cl_image_tag @desk.user.photo.key %>
 <%= link_to "Create a booking", new_desk_booking_path(@desk) %>
 <%= link_to "Back to all desks", desks_path %>
