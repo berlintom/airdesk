@@ -14,9 +14,28 @@
 }
 
 .banner p {
-  font-size: 25px;
+  font-size: 23px;
   color: white;
   opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-weight: medium;
+  font-weight: 600px;
+  padding: 10px 0;
+}
+
+#btn {
+  color: white;
+  border: 1px solid white;
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  width: fit-content;
+
+}
+
+#btn:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: whitesmoke;
 }
