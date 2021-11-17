@@ -1,0 +1,9 @@
+<h2>Your booked the <%= @desk.title %> desk!</h2>
+<h5>Date: <%= @booking.booked_on %></h5>
+<hr>
+<p><%= @desk.description %></p>
+<p><%= @desk.address %></p>
+<p><%= @desk.price %></p>
+<hr>
+<p>Host: <%= @desk.user.first_name %></p>
+<%= link_to "Back to all bookings", bookings_path %>
