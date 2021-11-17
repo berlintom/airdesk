@@ -1,27 +1,11 @@
-@media(max-width: 2000px) {
-  .card-trip {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-
-@media(max-width: 992px) {
-  .card-trip {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media(max-width: 768px) {
-  .card-trip {
-    grid-template-columns: 1fr;
-  }
-}
-
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   flex-grow: 1;
   padding: 15px;
+  width: 33%;
+  flex-wrap: wrap;
 }
 
 .card-trip > img {

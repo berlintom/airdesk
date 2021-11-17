@@ -8,18 +8,26 @@
 </head>
 <body>
   <div class="container">
-    <div class="card-trip">
-    <% @desks.each do |desk| %>
-    <%= cl_image_tag desk.photo.key %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%=link_to desk.title, desk_path(desk) %></h2>
-        <p><%=desk.description%></p>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://64.media.tumblr.com/tumblr_m0dpnpSJef1rqeb09o1_640.jpg);">
+      <div class="container">
+        <h1>Find your <strong>DreamDesk</strong> among 1000 Apartments now!</h1>
       </div>
-      <h2 class="card-trip-pricing"><%= (desk.price/100).round%>€</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
-    <% end %>
+  </div>
+  <div class="container">
+      <div class="card-trip d flex">
+        <% @desks.each do |desk| %>
+      <%= cl_image_tag desk.photo.key %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%=link_to desk.title, desk_path(desk) %></h2>
+          <p><%=desk.description%></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= (desk.price/100).round%>€</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
 </body>
