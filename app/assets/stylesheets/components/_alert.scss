@@ -1,6 +1,11 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  bottom: 14px;
+  left: 300px;
+  align-items: center;
   z-index: 1000;
+  color: #99A799;
+  border-radius: 4px;
+  margin-left: 16px;
+  font-size: 14px;
 }
