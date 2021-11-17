@@ -1,6 +1,6 @@
 
   <h1>Create a new booking</h1>
   <%= simple_form_for [@desk, @booking] do |f|%>
-  <%= f.input :booked_on %>
-  <%= f.button :submit %>
+  <%= f.input :booked_on%>
+  <div class="btn btn-normal"><%= f.button :submit %></div>
   <% end %>
