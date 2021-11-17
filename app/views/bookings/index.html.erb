@@ -5,8 +5,8 @@
     <div class="bookings">
       <li>
         <div class="bookings-index-content">
-          <%= booking.booked_on %>
-          <div class="btn btn-normal"><%=link_to "see booking details", booking_path(booking) %></div>
+          <p>You have booked <strong> <%= booking.desk.title %> </strong> on <strong> <%= booking.booked_on %> </strong></p>
+          <div class="btn btn-normal"><%=link_to "See booking details", booking_path(booking) %></div>
         </div>
       </li>
       <hr>
