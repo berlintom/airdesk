@@ -1,9 +1,13 @@
 <div class="container">
-  <h2><%= @desk.title %></h2>
-  <p><%= @desk.description %></p>
-  <p><%= @desk.address %></p>
-  <h3><%= @desk.price %></h3>
-  <p><%= @desk.user.first_name %></p>
-  <%= link_to "Create a booking", new_desk_booking_path(@desk) %>
-  <%= link_to "Back to all desks", desks_path %>
+  <div class="booking-show-card">
+      <h2><%= @desk.title %></h2>
+      <hr>
+      <p><em><%= @desk.description %></em></p>
+      <hr>
+      <p><strong>Adress:</strong> <%= @desk.address %></p>
+      <p><strong>Price:</strong> <%= @desk.price %></p>
+      <p><strong>Host:</strong> <%= @desk.user.first_name %></p>
+      <div class="btn btn-normal"><%= link_to "Create a booking", new_desk_booking_path(@desk) %></div>
+      <div class="btn btn-normal"><%= link_to "Back to all desks", desks_path %></div>
+  </div>
 </div>

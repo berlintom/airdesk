@@ -1,9 +1,8 @@
 .booking-show-card {
   text-align: center;
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px #adc2a96b;
   padding: 20px 20px;
-  background-color: #adc2a99c;
 }
 
 .bookings-index-content {
@@ -13,4 +12,12 @@
 
 li {
   list-style: none;
+}
+
+.bookings {
+  margin: 20px 20px;
+}
+
+.header {
+  color: #99A799;
 }
