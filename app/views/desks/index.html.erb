@@ -4,16 +4,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Index of Desks</title>
+  <title>Document</title>
 </head>
 <body>
   <div class="container">
-    <h1>Showing you all Desks</h1>
-      <% @desks.each do |desk| %>
-        <li>
-          <%=link_to desk.title, desk_path(desk) %>
-        </li>
-      <% end %>
+    <div class="card-trip">
+    <% @desks.each do |desk| %>
+    <%= cl_image_tag desk.photo.key %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%=link_to desk.title, desk_path(desk) %></h2>
+        <p><%=desk.description%></p>
+      </div>
+      <h2 class="card-trip-pricing"><%= (desk.price/100).round%>€</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+    <% end %>
   </div>
+</div>
 </body>
 </html>
