@@ -14,22 +14,22 @@
 
   <body>
   <div class="page-container">
+   <% if params[:action] != "home" %>
     <div class="navbar-container">
-        <% if params[:action] != "home" %>
-       <%= render "layouts/navbar" %>
-       <% end %>
+        <%= render "layouts/navbar" %>
     </div>
+    <% end %>
     <div class="content-container">
       <%= yield %>
     </div>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-    <div class="footer-container">
-      <% if params[:action] != "home" %>
-      <%= render "layouts/footer" %>
-       <% end %>
-    </div>
+    <% if params[:action] != "home" %>
+      <div class="footer-container">
+        <%= render "layouts/footer" %>
+      </div>
+    <% end %>
   </div>
- 
+
   </body>
 </html>
