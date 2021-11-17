@@ -1,0 +1,6 @@
+<% @bookings.each do |booking| %>
+    <li>
+    <%= booking.booked_on %>
+    <%=link_to "see booking details", booking_path(booking) %>
+    </li>
+<% end %>
