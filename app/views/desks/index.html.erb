@@ -17,19 +17,21 @@
     <div class="container">
       <div class="cards">
         <% @desks.each do |desk| %>
-          <div class="card-trip">
+        <%=link_to desk_path(desk), class: "card-trip" do %>
+          <%# <div class="card-trip"> %>
             <%= cl_image_tag desk.photo.key %>
             <div class="card-trip-infos">
               <div>
-                <h2><%=link_to desk.title, desk_path(desk) %></h2>
+                <h2><%=desk.title%></h2>
                 <p><%=desk.description%></p>
               </div>
               <h2 class="card-trip-pricing"><%= (desk.price/100).round%>€</h2>
               <div class="card-trip-user avatar-bordered">
                 <%= cl_image_tag desk.user.photo.key %>
               </div>
+            <%# </div> %>
             </div>
-            </div>
+          <% end %>
           <% end %>
       </div>
     </div>
