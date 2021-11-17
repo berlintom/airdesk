@@ -13,14 +13,23 @@
   </head>
 
   <body>
-    <% if params[:action] != "home" %>
-    <%= render "layouts/navbar" %>
-    <% end %>
-    <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <% if params[:action] != "home" %>
-    <%= render "layouts/footer" %>
-    <% end %>
+  <div class="page-container">
+    <div class="navbar-container">
+        <% if params[:action] != "home" %>
+       <%= render "layouts/navbar" %>
+       <% end %>
+    </div>
+    <div class="content-container">
+      <%= yield %>
+    </div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+    <div class="footer-container">
+      <% if params[:action] != "home" %>
+      <%= render "layouts/footer" %>
+       <% end %>
+    </div>
+  </div>
+ 
   </body>
 </html>
