@@ -1,6 +1,13 @@
-<% @bookings.each do |booking| %>
-    <li>
-    <%= booking.booked_on %>
-    <%=link_to "see booking details", booking_path(booking) %>
-    </li>
-<% end %>
+<div class="container">
+  <h2>Check out your bookings!</h2>
+  <hr>
+  <% @bookings.each do |booking| %>
+      <li>
+      <div class="bookings-index-content">
+      <%= booking.booked_on %>
+      <%=link_to "see booking details", booking_path(booking) %>
+      </div>
+      </li>
+
+  <% end %>
+</div>

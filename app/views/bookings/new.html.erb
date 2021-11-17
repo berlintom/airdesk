@@ -1,8 +1,6 @@
 
-<div class="container">
   <h1>Create a new booking</h1>
   <%= simple_form_for [@desk, @booking] do |f|%>
   <%= f.input :booked_on %>
   <%= f.button :submit %>
   <% end %>
-</div>

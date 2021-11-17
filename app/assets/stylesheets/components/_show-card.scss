@@ -1,0 +1,16 @@
+.booking-show-card {
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px 20px;
+  background-color: #adc2a99c;
+}
+
+.bookings-index-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  list-style: none;
+}
