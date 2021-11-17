@@ -4,16 +4,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Index of Desks</title>
+  <title>Document</title>
 </head>
 <body>
   <div class="container">
-    <h1>Showing you all Desks</h1>
-      <% @desks.each do |desk| %>
-        <li>
-          <%=link_to desk.title, desk_path(desk) %>
-        </li>
-      <% end %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://64.media.tumblr.com/tumblr_m0dpnpSJef1rqeb09o1_640.jpg);">
+      <div class="container">
+        <h1>Find your <strong>DreamDesk</strong> among 1000 Apartments now!</h1>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+      <div class="cards">
+        <% @desks.each do |desk| %>
+          <div class="card-trip">
+            <%= cl_image_tag desk.photo.key %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%=link_to desk.title, desk_path(desk) %></h2>
+                <p><%=desk.description%></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= (desk.price/100).round%>€</h2>
+              <div class="card-trip-user avatar-bordered">
+                <%= cl_image_tag desk.user.photo.key %>
+              </div>
+            </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
   </div>
 </body>
 </html>
