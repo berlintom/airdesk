@@ -1,5 +1,6 @@
 class DesksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
+  before_create :convert_money_to_cents
 
   def index
     @desks = Desk.all
@@ -28,5 +29,9 @@ class DesksController < ApplicationController
 
   def params_desk
     params.require(:desk).permit(:title, :address, :description, :price, :photo)
+  end
+
+  def convert_money_to_cents
+    self.price = price.to_i * 100
   end
 end
