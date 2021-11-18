@@ -1,10 +1,14 @@
 <div class="container">
-  <h1>Create a new booking</h1>
-  <%= simple_form_for [@desk, @booking] do |f|%>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :comment %>
-  <div class="btn btn-normal"><%= f.button :submit %></div>
-  <% end %>
+  <div class="form-container">
+    <h2>Create a new booking</h2>
+    <div class="form">
+    <%= simple_form_for [@desk, @booking] do |f|%>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :comment %>
+    <div class="btn btn-normal btn-cta"><%= f.button :submit %></div>
+    <% end %>
+    </div>
+  </div>
 </div>
 
