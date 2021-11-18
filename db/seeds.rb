@@ -19,7 +19,7 @@ puts "creating users and desks"
     description: Faker::Lorem.sentence(word_count: 10)
   )
   user.photo.attach(io: file = URI.open("https://source.unsplash.com/featured/?face"), filename: "face", content_type: 'image/png')
-  user.save
+  user.save!
 
   desk = Desk.new(
     title: Faker::Artist.name,
@@ -29,5 +29,5 @@ puts "creating users and desks"
     user: user
   )
   desk.photo.attach(io: file = URI.open("https://source.unsplash.com/featured/?desk"), filename: "desk", content_type: 'image/png')
-  desk.save
+  desk.save!
 end
