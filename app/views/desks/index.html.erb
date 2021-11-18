@@ -27,8 +27,8 @@
             <%# <%= cl_image_tag desk.photo.key %>
             <div class="card-trip-infos">
               <div>
-                <h2><%=desk.title%></h2>
-                <p><%=desk.description%></p>
+                <h2><%= desk.title %></h2>
+                <p><%= desk.long_description.truncate_words(15) %></p>
               </div>
               <h2 class="card-trip-pricing"><%= (desk.price/100).round%>€</h2>
               <div class="card-trip-user avatar-bordered">

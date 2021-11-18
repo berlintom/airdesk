@@ -1,14 +1,22 @@
 <div class="container">
   <div class="booking-show-card">
       <h2><%= @desk.title %></h2>
-      <%= cl_image_tag(@desk.photo.key, width: 300, height: 200, crop: :fill) %>
+      <% if @desk.photo.attached? %>
+        <%= cl_image_tag(@desk.photo.key, width: 500, height: 400, crop: :fill) %>
+      <% else %>
+        <%= image_tag "https://media.istockphoto.com/photos/closeup-of-stacks-of-paper-from-receipts-and-documents-picture-id694767254?b=1&k=20&m=694767254&s=170667a&w=0&h=zIX2cwlFRN0bWAUcqq3pA0nsNSv4_ZJmOCm3-RLor04=" %>
+      <% end %>
       <hr>
-      <p><em><%= @desk.description %></em></p>
+      <p><%= @desk.long_description %></p>
       <hr>
-      <p><strong>Adress:</strong> <%= @desk.address %></p>
-      <p><strong>Price:</strong> <%= (@desk.price/100).round%>€</p>
-      <p><strong>Host:</strong> <%= @desk.user.first_name %></p>
-      <div class="btn btn-normal"><%= link_to "Create a booking", new_desk_booking_path(@desk) %></div>
+      <p><strong>Where is the desk?</strong> <%= @desk.address %></p>
+      <p><strong>How much?</strong> <%= (@desk.price/100).round%>€ per working day</p>
+      <div class="card-trip-user avatar-bordered">
+        <%= cl_image_tag @desk.user.photo.key %>
+      </div>
+      <br>
+      <p><strong>Who is hosting?</strong> <%= @desk.user.first_name %></p>
+      <div class="btn btn-cta"><%= link_to "Create a booking", new_desk_booking_path(@desk) %></div>
       <div class="btn btn-normal"><%= link_to "Back to all desks", desks_path %></div>
   </div>
 </div>
