@@ -3,7 +3,11 @@
     <div class="cards">
       <% @desks.each do |desk| %>
         <%=link_to ownerlisting_path(desk), class: "card-trip" do %>
-          <%= cl_image_tag desk.photo.key %>
+          <% if desk.photo.attached? %>
+            <%= cl_image_tag desk.photo.key %>
+          <% else %>
+            <%= image_tag "https://media.istockphoto.com/photos/closeup-of-stacks-of-paper-from-receipts-and-documents-picture-id694767254?b=1&k=20&m=694767254&s=170667a&w=0&h=zIX2cwlFRN0bWAUcqq3pA0nsNSv4_ZJmOCm3-RLor04=" %>
+          <% end %>
           <div class="card-trip-infos">
             <div>
               <h2><%=desk.title%></h2>
@@ -11,7 +15,11 @@
             </div>
             <h2 class="card-trip-pricing"><%= (desk.price/100).round%>€</h2>
             <div class="card-trip-user avatar-bordered">
-              <%= cl_image_tag desk.user.photo.key %>
+              <% if desk.user.photo.attached? %>
+                <%= cl_image_tag desk.user.photo.key %>
+              <% else %>
+                <%= image_tag "https://media.istockphoto.com/vectors/user-profile-icon-vector-avatar-portrait-symbol-flat-shape-person-vector-id1270368615?k=20&m=1270368615&s=170667a&w=0&h=qpvA8Z6L164ZcKfIyOl-E8fKnfmRZ09Tks7WEoiLawA=" %>
+              <% end %>
             </div>
           </div>
         <% end %>
