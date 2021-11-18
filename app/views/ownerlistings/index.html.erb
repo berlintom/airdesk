@@ -11,7 +11,11 @@
           <div class="card-trip-infos">
             <div>
               <h2><%=desk.title%></h2>
-              <p><%=desk.description%></p>
+              <% if desk.description == "" %>
+                <p>This is another beautiful desk you can book</p>
+              <% else %>
+               <p><%=desk.description%></p>
+              <% end %>
             </div>
             <h2 class="card-trip-pricing"><%= (desk.price/100).round%>€</h2>
             <div class="card-trip-user avatar-bordered">
