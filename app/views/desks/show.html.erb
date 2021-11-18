@@ -5,7 +5,7 @@
       <hr>
       <p><%= @desk.long_description %></p>
       <hr>
-      <p><strong>Where?</strong> <%= @desk.address %></p>
+      <p><strong>Where is the desk?</strong> <%= @desk.address %></p>
       <p><strong>How much?</strong> <%= (@desk.price/100).round%>€ per working day</p>
       <div class="card-trip-user avatar-bordered">
         <%= cl_image_tag @desk.user.photo.key %>
