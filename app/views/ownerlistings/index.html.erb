@@ -1,0 +1,20 @@
+<h1> Bookings </h1>
+  <div class="container">
+    <div class="cards">
+      <% @desks.each do |desk| %>
+        <%=link_to ownerlisting_path(desk), class: "card-trip" do %>
+          <%= cl_image_tag desk.photo.key %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%=desk.title%></h2>
+              <p><%=desk.description%></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= (desk.price/100).round%>€</h2>
+            <div class="card-trip-user avatar-bordered">
+              <%= cl_image_tag desk.user.photo.key %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
