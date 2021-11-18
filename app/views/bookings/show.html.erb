@@ -4,7 +4,10 @@
     <hr>
     <%= cl_image_tag(@desk.photo.key, width: 400, height: 200, crop: :fill) %>
     <hr>
-    <h3>Booked Date: <%= @booking.booked_on %></h3>
+    <h5>Booked from <%= @booking.start_date %> till <%= @booking.end_date %></h5>
+    <hr>
+    <h6> Preferences: <%= @booking.comment %>
+
     <hr>
     <p><%= @desk.description %></p>
     <p><strong>Address: </strong><%= @desk.address %></p>
