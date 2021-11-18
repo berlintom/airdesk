@@ -1,20 +1,7 @@
 <div class="container">
-<<<<<<< HEAD
-  <div class="header"><h2>Check out your bookings!</h2></div>
-  <hr>
-  <% @bookings.each do |booking| %>
-    <div class="bookings">
-      <li>
-        <div class="bookings-index-content">
-          <%= booking.start_date %>
-          <div class="btn btn-normal"><%=link_to "see booking details", booking_path(booking) %></div>
-        </div>
-      </li>
-=======
   <div class="header"><h1>Check out your bookings!</h1></div>
   <div class="bookings">
     <% @bookings.each do |booking| %>
->>>>>>> master
       <hr>
       <%=link_to booking_path(booking), class: "bookings-card" do %>
         <% if booking.desk.photo.attached? %>

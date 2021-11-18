@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:desk_id])
+    @booking = Booking.find(params[:id])
     @desk = @booking.desk
   end
 
@@ -30,6 +30,6 @@ class BookingsController < ApplicationController
   private
 
   def params_booking
-    params.require(:booking).permit(:start_date)
+    params.require(:booking).permit(:start_date, :end_date, :comment)
   end
 end
