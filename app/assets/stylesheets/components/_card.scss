@@ -14,6 +14,9 @@
   margin-top: 7px;
   margin-right: 7px;
   margin-left: 7px;
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.293);
+  }
 }
 
 .card-trip > img {
@@ -22,14 +25,9 @@
   object-fit: cover;
 }
 
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+
 
 .card-trip p {
-  font-size: 12px;
   opacity: .7;
   margin: 0;
 }
@@ -49,10 +47,41 @@
   width: 40px;
 }
 
-.card-trip h2 {
-  color: #99A799;
-}
 
 .card-trip p {
   color: black;
+}
+
+.bookings-card {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+  p {
+    color: black
+  }
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.293);
+  }
+}
+
+.bookings-card-mid {
+  flex-grow: 1;
+  line-height: 40px;
+  padding-left: 10px;
+  p {
+    margin: 0
+  }
+}
+
+.bookings-card-bottom {
+  padding-right: 10px;
+  margin-top: 92px;
 }
