@@ -1,14 +1,15 @@
 <div class="container">
-  <h1>Create a new desk</h1>
-  <%= simple_form_for [@desk] do |f|%>
-  <%= f.input :title %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <div class="btn btn-normal"><%= f.button :submit %></div>
-  <% end %>
+  <div class="form-container">
+    <h2>Create a new desk</h2>
+    <div class="form">
+      <%= simple_form_for [@desk] do |f|%>
+      <%= f.input :title %>
+      <%= f.input :address %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
+      <div class="btn btn-normal"><%= f.button :submit %></div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<%# new_desk
-desks/new %>
