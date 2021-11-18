@@ -7,8 +7,8 @@
       <%= f.input :address %>
       <%= f.input :description %>
       <%= f.input :price %>
-      <%= f.input :photo, as: :file %>
-      <div class="btn btn-normal"><%= f.button :submit %></div>
+      <%= f.input :photo, as: :file, input_html: { class: 'd-none'}, label_html: {class:"upload-photo-btn"}, label: "upload photo"%>
+      <div class="btn btn-normal btn-cta"><%= f.button :submit %></div>
       <% end %>
     </div>
   </div>
