@@ -39,8 +39,7 @@ puts "creating users and desks"
       "Albrechtstraße 13, 10117 Berlin",
       "Unter den Linden 35, 10117 Berlin"
     ].sample,
-    description: Faker::Quote.matz,
-    long_description: [
+    description: [
       "Ahoy! gets its nautically-themed name because it helps ‘budding startups and freelancers steer clear of potential pitfalls’. The 4,500 sqm coworking space was founded in 2012 by Nikita Roshkow and Nikolas Woischnik, of blog TechBerlin. ",
       "This Desk is awesome! The colossal start-up campus counts the likes of Soundcloud, Twitter, Uber and Pinterest among its core tenants. But it’s not all about the big names: this diverse coworking space markets itself as a ‘next-generation business club’ that caters for companies big and small.",
       "Our polished environs cater for freelancers as well as big businesses. (Rumour has it, Apple is quietly working on its self-driving car project from within its Freidrichstraße address.)",
