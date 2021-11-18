@@ -22,8 +22,9 @@
     <div class="content-container">
       <%= yield %>
     </div>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+      <p> <%= render '/devise/shared/flashes' %> </p>
+        <!--p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>-->
     <% if params[:action] != "home" %>
       <div class="footer-container">
         <%= render "layouts/footer" %>
