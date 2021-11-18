@@ -1,0 +1,22 @@
+.flash {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 8px;
+}
+
+.flash-success {
+  border: 2px solid #D3E4CD;
+}
+
+.flash-warning {
+  border: 2px solid #F9A051;
+}
+
+.flash-danger {
+  border: 2px solid #FD1015;
+}
