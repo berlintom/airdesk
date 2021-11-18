@@ -3,7 +3,7 @@
       <h2><%= @desk.title %></h2>
       <%= cl_image_tag(@desk.photo.key, width: 300, height: 200, crop: :fill) %>
       <hr>
-      <p><em><%= @desk.description %></em></p>
+      <p><em><%= @desk.long_description %></em></p>
       <hr>
       <p><strong>Adress:</strong> <%= @desk.address %></p>
       <p><strong>Price:</strong> <%= (@desk.price/100).round%>€</p>

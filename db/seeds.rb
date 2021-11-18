@@ -24,7 +24,8 @@ puts "creating users and desks"
   desk = Desk.new(
     title: Faker::Artist.name,
     address: Faker::Address.full_address,
-    description: Faker::Lorem.sentence(word_count: 10),
+    description: Faker::Lorem.sentence(word_count: 5),
+    long_description: Faker::Lorem.sentence(word_count: 10),
     price: rand(500..2000),
     user: user
   )
