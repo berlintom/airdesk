@@ -2,15 +2,25 @@
   <div class="booking-show-card">
     <h2>You booked the "<%= @desk.title %>" desk!</h2>
     <hr>
-    <%= cl_image_tag(@desk.photo.key, width: 300, height: 200, crop: :fill) %>
+    <%= cl_image_tag(@desk.photo.key, width: 400, height: 200, crop: :fill) %>
     <hr>
-    <h5>Date: <%= @booking.booked_on %></h5>
+    <h5>Booked from <%= @booking.start_date %> till <%= @booking.end_date %></h5>
+    <hr>
+    <h6> Preferences: <%= @booking.comment %>
+
     <hr>
     <p><%= @desk.description %></p>
-    <p><%= @desk.address %></p>
-    <p><%= (@desk.price/100).round%>€</p>
-    <p>Host: <%= @desk.user.first_name %></p>
+    <p><strong>Address: </strong><%= @desk.address %></p>
+    <p><strong>Price: </strong><%= (@desk.price/100).round%>€</p>
+    <div class="coworker-field">
+      <p class="mb-0" ><strong>Your new coworker: </strong></p>
+      <div class="card-trip-user avatar-bordered">
+          <%= cl_image_tag @desk.user.photo.key %>
+      </div>
+      <p><%= @desk.user.first_name %></p>
+    </div>
      <hr>
+    <div class="btn btn-cta"><%= link_to "Book another Desk", desks_path %></div>
     <div class="btn btn-normal"><%= link_to "Back to all bookings", bookings_path %></div>
   </div>
 </div>
