@@ -8,4 +8,8 @@ class DesksController < ApplicationController
   def show
     @desk = Desk.find(params[:id])
   end
+
+  def new
+    @desk = Desk.new
+  end
 end
