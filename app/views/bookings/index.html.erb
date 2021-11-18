@@ -1,15 +1,23 @@
 <div class="container">
-  <div class="header"><h2>Check out your bookings!</h2></div>
-  <hr>
-  <% @bookings.each do |booking| %>
-    <div class="bookings">
-      <li>
-        <div class="bookings-index-content">
-          <%= booking.booked_on %>
-          <div class="btn btn-normal"><%=link_to "see booking details", booking_path(booking) %></div>
-        </div>
-      </li>
+  <div class="header"><h1>Check out your bookings!</h1></div>
+  <div class="bookings">
+    <% @bookings.each do |booking| %>
       <hr>
-  	</div>
-  <% end %>
+      <%=link_to booking_path(booking), class: "bookings-card" do %>
+        <% if booking.desk.photo.attached? %>
+          <%= cl_image_tag booking.desk.photo.key %>
+        <% else %>
+            <%= image_tag "https://media.istockphoto.com/photos/closeup-of-stacks-of-paper-from-receipts-and-documents-picture-id694767254?b=1&k=20&m=694767254&s=170667a&w=0&h=zIX2cwlFRN0bWAUcqq3pA0nsNSv4_ZJmOCm3-RLor04=" %>
+        <% end %>
+        <div class="bookings-card-mid">
+          <h2> <%= booking.desk.title %></h2>
+          <p> Date: <strong>12/1/22</strong> until <strong>13/1/22</strong></p>
+        </div>
+        <div class="bookings-card-bottom">
+          <h2><%= booking.desk.price %>€ per Day</h2>
+        </div>
+      <% end %>
+    <% end %>
+    <hr>
+  </div>
 </div>
