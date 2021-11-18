@@ -9,13 +9,13 @@
       <hr>
       <p><%= @desk.long_description %></p>
       <hr>
-      <p><strong>Where is the desk?</strong> <%= @desk.address %></p>
+      <p><strong>Where?</strong> <%= @desk.address %></p>
       <p><strong>How much?</strong> <%= (@desk.price/100).round%>€ per working day</p>
       <div class="card-trip-user avatar-bordered">
         <%= cl_image_tag @desk.user.photo.key %>
       </div>
       <br>
-      <p><strong>Who is hosting?</strong> <%= @desk.user.first_name %></p>
+      <p><strong>Who is the host?</strong> <%= @desk.user.first_name %></p>
       <div class="btn btn-cta"><%= link_to "Create a booking", new_desk_booking_path(@desk) %></div>
       <div class="btn btn-normal"><%= link_to "Back to all desks", desks_path %></div>
   </div>
