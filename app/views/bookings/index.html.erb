@@ -14,7 +14,10 @@
           <p> Date: <strong>12/1/22</strong> until <strong>13/1/22</strong></p>
         </div>
         <div class="bookings-card-bottom">
-          <h2><%= booking.desk.price %>€ per Day</h2>
+          <div class="avatar-bordered">
+            <%= cl_image_tag booking.desk.user.photo.key %>
+          </div>
+          <div class="price"><h2><%= booking.desk.price %>€ per Day</h2></div>
         </div>
       <% end %>
     <% end %>
