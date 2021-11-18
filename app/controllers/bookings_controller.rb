@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @desk = Desk.find(params[:desk_id])
     @booking.desk = @desk
     @booking.user = current_user
-    @booking.saveb
+    @booking.save
     if @booking.save
       redirect_to bookings_path
     else
