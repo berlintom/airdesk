@@ -23,9 +23,24 @@ puts "creating users and desks"
 
   desk = Desk.new(
     title: Faker::Artist.name,
-    address: Faker::Address.full_address,
-    description: Faker::Lorem.sentence(word_count: 5),
-    long_description: Faker::Lorem.sentence(word_count: 10),
+    address: [
+      "Yorckstraße 89, 10965 Berlin",
+      "Bernburger Str. 35, 10963 Berlin",
+      "Wilhelmstraße 22, 10963 Berlin",
+      "Knaackstraße 16-18, 10405 Berlin",
+      "Straßburger Str. 33, 10405 Berlin",
+      "Knaackstraße 37, 10435 Berlin",
+      "Akazienstraße 9, 10823 Berlin",
+      "Eisenacher Str. 75, 10823 Berlin",
+      "Schloßstraße 60, 14059 Berlin",
+      "Wielandstraße 38, 10629 Berlin",
+      "Fuldastraße 33, 12045 Berlin",
+      "Lenaustraße 10, 12047 Berlin",
+      "Albrechtstraße 13, 10117 Berlin",
+      "Unter den Linden 35, 10117 Berlin"
+    ].sample,
+    description: Faker::Quote.matz,
+    long_description: Faker::Restaurant.review,
     price: rand(500..2000),
     user: user
   )

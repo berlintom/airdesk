@@ -6,11 +6,13 @@
 
 .btn-cta {
   border-radius: 18px;
+  transition-duration: 0.4s;
   padding: 5px 10px;
+  font-size: 16px;
   border: 1px solid #ADC2A9;
   background-color: #ADC2A9;
   a {
-    color: white;
+    color:#F9F9F9;
   }
 }
 
@@ -38,6 +40,18 @@
   color: #99A799;
   border: 1px solid #99A799;
   box-shadow: 0px 0px 1px black;
+  a {
+    text-decoration: none;
+    color: #99A799;
+    // text-shadow: 0px 0px 1px black;
+  }
+}
+
+.btn-cta:hover {
+  color: #181D31;
+  border: 1px solid #99A799;
+  box-shadow: 0px 0px 1px black;
+  background-color: #FEF5ED;
   a {
     text-decoration: none;
     color: #99A799;
