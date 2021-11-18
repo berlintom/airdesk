@@ -15,6 +15,7 @@ class DesksController < ApplicationController
 
   def create
     @desk = Desk.new(params_desk)
+    @desk.price = @desk[:price].to_i * 100
     @desk.user = current_user
     @desk.save
     if @desk.save
@@ -29,4 +30,5 @@ class DesksController < ApplicationController
   def params_desk
     params.require(:desk).permit(:title, :address, :description, :price, :photo)
   end
+
 end
