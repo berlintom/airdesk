@@ -1,14 +1,14 @@
 <div class="container">
   <div class="booking-show-card">
       <h2><%= @desk.title %></h2>
-      <%= cl_image_tag(@desk.photo.key, width: 300, height: 200, crop: :fill) %>
+      <%= cl_image_tag(@desk.photo.key, width: 500, height: 400, crop: :fill) %>
       <hr>
-      <p><em><%= @desk.long_description %></em></p>
+      <p><%= @desk.long_description %></p>
       <hr>
       <p><strong>Adress:</strong> <%= @desk.address %></p>
       <p><strong>Price:</strong> <%= (@desk.price/100).round%>€</p>
       <p><strong>Host:</strong> <%= @desk.user.first_name %></p>
-      <div class="btn btn-normal"><%= link_to "Create a booking", new_desk_booking_path(@desk) %></div>
+      <div class="btn btn-cta"><%= link_to "Create a booking", new_desk_booking_path(@desk) %></div>
       <div class="btn btn-normal"><%= link_to "Back to all desks", desks_path %></div>
   </div>
 </div>
