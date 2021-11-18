@@ -7,7 +7,7 @@
         <%= image_tag "https://media.istockphoto.com/photos/closeup-of-stacks-of-paper-from-receipts-and-documents-picture-id694767254?b=1&k=20&m=694767254&s=170667a&w=0&h=zIX2cwlFRN0bWAUcqq3pA0nsNSv4_ZJmOCm3-RLor04=" %>
       <% end %>
       <hr>
-      <p><%= @desk.long_description %></p>
+      <p><%= @desk.description %></p>
       <hr>
       <p><strong>Where?</strong> <%= @desk.address %></p>
       <p><strong>How much?</strong> <%= (@desk.price/100).round%>€ per working day</p>
