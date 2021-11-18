@@ -1,6 +1,5 @@
 class DesksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
-  before_create :convert_money_to_cents
 
   def index
     @desks = Desk.all
@@ -16,6 +15,7 @@ class DesksController < ApplicationController
 
   def create
     @desk = Desk.new(params_desk)
+    @desk.price = @desk[:price].to_i * 100
     @desk.user = current_user
     @desk.save
     if @desk.save
@@ -31,7 +31,4 @@ class DesksController < ApplicationController
     params.require(:desk).permit(:title, :address, :description, :price, :photo)
   end
 
-  def convert_money_to_cents
-    self.price = price.to_i * 100
-  end
 end
