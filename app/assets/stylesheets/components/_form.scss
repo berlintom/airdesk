@@ -2,3 +2,45 @@
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgb(153, 152, 152);
 }
+
+
+.form-container h2 {
+  background: #adc2a942;
+  font-size: 25px;
+	// text-transform: uppercase;
+	color: #7e8a7e;
+	font-weight: 100;
+	padding: 20px;
+	margin: -30px -30px 30px -30px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.form-container {
+  color: #7e8a7e;
+  font-weight: bolder;
+  width: 600px;
+	padding: 30px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  border-radius: 5px;
+	.btn {
+    color: white;
+  }
+  .btn:hover {
+    color: white;
+  }
+}
+
+.form-control-file, .form-control-range {
+    color: #F9A051;
+}
+
+.upload-photo-btn {
+  color: white;
+  background-color: #ADC2A9;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
