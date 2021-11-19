@@ -1,7 +1,10 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.where(user_id: current_user).order(created_at: :desc)
+    @bookings = Booking.where(user: current_user).order(created_at: :desc)
+    @pendings = @bookings.where(confirmation: "pending")
+    @confirmed = @bookings.where(confirmation: "accepted")
+    @declined = @bookings.where(confirmation: "declined")
   end
 
   def show
