@@ -12,10 +12,14 @@ style=" fill:#F8B071;"><g transform="translate(0.516,0.516) scale(0.994,0.994)">
   </button>
 
   <div class="nav-bar-links">
+  <% if current_user != nil %>
     <%= link_to "Book a desk", desks_path, class: "navbar-brand"%>
     <%= link_to "Offer your desk", new_desk_path, class: "navbar-brand" %>
     <%= link_to "My desks", ownerlistings_path, class: "navbar-brand"%>
     <%= link_to "My bookings", bookings_path, class: "navbar-brand" %>
+  <% else %>
+    <%= link_to "Book a desk", desks_path, class: "navbar-brand"%>
+  <% end %>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
