@@ -1,6 +1,6 @@
 <h1> Requests and Bookings for: <%= @desk.title %></h1>
 <% @bookings.each do |booking| %>
-<%= booking.booked_on %>
+<p> From <%= booking.start_date %> till <%= booking.end_date %> </p>
 <p>Status: <%= booking.confirmation ? "confirmed" : "pending"%></p>
 <% end %>
 <div class="btn btn-normal"><%= link_to "Back to all of my desks", ownerlistings_path %></div>
