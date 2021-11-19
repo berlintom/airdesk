@@ -22,7 +22,11 @@
         </div>
         <p><%= @desk.user.first_name %></p>
        <hr>
-      <div class="btn btn-cta"><%= link_to "Book this Desk!", new_desk_booking_path(@desk) %></div>
-      <div class="btn btn-normal"><%= link_to "Explore other Desks", desks_path %></div>
-  </div>
+        <% if @desk.user == current_user %>
+          <div class="btn btn-normal"><%= link_to "Explore other Desks", desks_path %></div>
+        <% else %>
+          <div class="btn btn-cta"><%= link_to "Book this Desk!", new_desk_booking_path(@desk) %></div>
+          <div class="btn btn-normal"><%= link_to "Explore other Desks", desks_path %></div>
+        <% end %>
+</div>
 </div>
