@@ -1,9 +1,15 @@
 <div class="container">
   <div class="header"><h1>Check out your bookings!</h1></div>
+
+<% if @bookings.empty? %>
+  <h3>You don´t have any bookings yet! </h3>
+<% else %>
+
   <% @pendings = @bookings.where(confirmation: "pending") %>
   <% @confirmed = @bookings.where(confirmation: "accepted") %>
   <% @declined = @bookings.where(confirmation: "declined") %>
   <h2>Pending Reservations:</h2>
+
   <div class="bookings">
     <% @pendings.each do |booking| %>
       <hr>
@@ -20,7 +26,12 @@
         </div>
         <div class="bookings-card-bottom">
           <div class="avatar-bordered">
-            <%= cl_image_tag booking.desk.user.photo.key %>
+           <% if booking.desk.user.photo.attached? %>
+              <%= cl_image_tag booking.desk.user.photo.key %>
+            <% else %>
+              <%= image_tag "https://media.istockphoto.com/vectors/user-profile-icon-vector-avatar-portrait-symbol-flat-shape-person-vector-id1270368615?k=20&m=1270368615&s=170667a&w=0&h=qpvA8Z6L164ZcKfIyOl-E8fKnfmRZ09Tks7WEoiLawA=" %>
+            <% end %>
+            <%# <%= cl_image_tag booking.desk.user.photo.key %>
           </div>
           <div class="sings">
           <% if booking.confirmation == "pending" %>
@@ -177,4 +188,5 @@
     <% end %>
     <hr>
   </div>
+<% end %>
 </div>
