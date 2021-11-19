@@ -1,5 +1,9 @@
 <div class="container">
   <div class="header"><h1>Check out your bookings!</h1></div>
+
+<% if @bookings.empty? %>
+  <h3>You don´t have any bookings yet! </h3>
+<% else %>
   <div class="bookings">
     <% @bookings.each do |booking| %>
       <hr>
@@ -29,4 +33,5 @@
     <% end %>
     <hr>
   </div>
+<% end %>
 </div>
