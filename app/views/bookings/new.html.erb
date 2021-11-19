@@ -5,7 +5,6 @@
     <%= simple_form_for [@desk, @booking] do |f|%>
     <%= f.input :start_date, as: :date, html5: true %>
     <%= f.input :end_date, as: :date, html5: true %>
-    <!-- <%= f.input :start_date %>    <%= f.input :end_date %> -->
     <%= f.input :comment %>
     <div class="btn btn-normal btn-cta"><%= f.button :submit %></div>
     <% end %>
