@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="header"><h1>Check out your bookings!</h1></div>
+  <div class="header"><h1>Overview of my bookings</h1></div>
 
 <% if @bookings.empty? %>
   <h3>You don´t have any bookings yet! </h3>
@@ -17,8 +17,10 @@
         <% end %>
         <div class="bookings-card-mid">
           <h2> <%= booking.desk.title %></h2>
-          <p>Booked from <%= booking.start_date %> until <%= booking.end_date %></p>
-          <p> <%= booking.user.first_name %> 💌: <%= booking.comment %> </p>
+          <p>Booked from <%= booking.start_date.strftime("%d.%m.%y") %> until <%= booking.end_date.strftime("%d.%m.%y") %></p>
+           <% if booking.comment? %>
+          <p>💌 from <%= booking.user.first_name %>: <%= booking.comment %> </p>
+          <% end %>
         </div>
         <div class="bookings-card-bottom">
           <div class="avatar-bordered">
