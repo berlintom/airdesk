@@ -1,5 +1,7 @@
 <div class="container">
-  <h1> These are my Desks </h1>
+  <div class="header">  <h1> These are my DreamDesks </h1></div>
+    <h2>Click on your desk to see bookings</h2>
+    <br>
     <div class="cards">
       <% @desks.each do |desk| %>
         <%=link_to ownerlisting_path(desk), class: "card-trip" do %>
