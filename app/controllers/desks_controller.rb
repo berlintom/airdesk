@@ -2,7 +2,7 @@ class DesksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
   def index
-    @desks = Desk.all
+    @desks = Desk.all.order(created_at: :desc)
   end
 
   def show
@@ -19,7 +19,7 @@ class DesksController < ApplicationController
     @desk.user = current_user
     @desk.save
     if @desk.save
-      redirect_to desks_path
+      redirect_to ownerlistings_path
     else
       render :new
     end

@@ -1,26 +1,26 @@
 <div class="container">
   <div class="booking-show-card">
-    <h2>You booked the "<%= @desk.title %>" desk!</h2>
+    <h2>You´ve booked the "<%= @desk.title %>" desk!</h2>
     <hr>
     <%= cl_image_tag(@desk.photo.key, width: 400, height: 200, crop: :fill) %>
     <hr>
-    <h5>Booked from <%= @booking.start_date %> till <%= @booking.end_date %></h5>
+    <p>Booked from <strong><%= @booking.start_date.strftime("%d.%m.%y") %></strong> till <strong><%= @booking.end_date.strftime("%d.%m.%y") %></strong></p>
     <hr>
-    <h6> Preferences: <%= @booking.comment %>
-
+    <p> Comment: <%= @booking.comment %></p>
     <hr>
     <p><%= @desk.description %></p>
-    <p><strong>Address: </strong><%= @desk.address %></p>
-    <p><strong>Price: </strong><%= (@desk.price/100).round%>€</p>
+    <p><strong>Where?</strong> <%= @desk.address %></p>
+    <p><strong>How much?</strong> <%= (@desk.price/100).round%>€ per working day</p>
     <div class="coworker-field">
-      <p class="mb-0" ><strong>Your new coworker: </strong></p>
+      <p class="mb-0" ><strong>Meet your new CoWorker: </strong></p>
+      <br>
       <div class="card-trip-user avatar-bordered">
           <%= cl_image_tag @desk.user.photo.key %>
       </div>
       <p><%= @desk.user.first_name %></p>
     </div>
      <hr>
-    <div class="btn btn-cta"><%= link_to "Book another Desk", desks_path %></div>
-    <div class="btn btn-normal"><%= link_to "Back to all bookings", bookings_path %></div>
+    <div class="btn btn-cta"><%= link_to "Explore more Desks", desks_path %></div>
+    <div class="btn btn-normal"><%= link_to "All bookings", bookings_path %></div>
   </div>
 </div>
