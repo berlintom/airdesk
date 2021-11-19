@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:index, :show]
+  patch "/bookings/:id/accepted", to: "bookings#accept", as: :booking_accept
+  patch "/bookings/:id/declined", to: "bookings#decline", as: :booking_decline
   resources :ownerlistings, only: [:index, :show]
 end
