@@ -16,8 +16,12 @@
   <div class="page-container">
    <% if params[:action] != "home" %>
     <div class="navbar-container">
-        <%= render "layouts/navbar" %>
+      <%= render "layouts/navbar" %>
     </div>
+    <% else %>
+      <div class="navbar-container">
+        <%= render "layouts/navbarinv" %>
+      </div>
     <% end %>
     <div class="content-container">
       <%= yield %>
