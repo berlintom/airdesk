@@ -99,3 +99,33 @@
     right: 10px
   }
 }
+
+#booking-avatar img {
+  height: 100px;
+  width: 100px;
+  margin-left: 5px;
+}
+
+.slot {
+  height: 20px;
+  width: 20px;
+  position: relative;
+}
+
+.buttons {
+  height: 100%;
+  margin-top: 10px;
+  justify-content: stretch;
+  align-items: right;
+  margin-right: 7px;
+  padding-top: 5px
+}
+
+.sign {
+  text-align: right;
+}
+
+.button-con {
+  height: 68px;
+
+}
