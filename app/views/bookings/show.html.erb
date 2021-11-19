@@ -10,7 +10,7 @@
     <hr>
     <p><%= @desk.description %></p>
     <p><strong>Where?</strong> <%= @desk.address %></p>
-    <p><strong>How much?</strong> <%= (@desk.price/100).round%>€ per working day</p>
+    <p><strong>How much?</strong> <%= (((@booking.end_date - @booking.start_date).to_i) * (@booking.desk.price/100).round + ((@booking.desk.price/100).round)) %>€ in total</p>
     <div class="coworker-field">
       <p class="mb-0" ><strong>Meet your new CoWorker: </strong></p>
       <br>
