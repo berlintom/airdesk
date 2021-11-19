@@ -11,7 +11,7 @@
         <% end %>
         <div class="bookings-card-mid">
           <h2> <%= booking.desk.title %></h2>
-          <p>Booked from <%= booking.start_date %> until <%= booking.end_date %></p>
+          <p>Booked from <strong><%= booking.start_date.strftime("%d.%m.%y") %></strong> till <strong><%= booking.end_date.strftime("%d.%m.%y") %></strong></p>
           <p> <%= booking.user.first_name %> 💌: <%= booking.comment %> </p>
         </div>
         <div class="bookings-card-bottom">
