@@ -1,7 +1,149 @@
 <div class="container">
   <h1> Requests and Bookings for: <%= @desk.title %></h1>
+  <h2>Pending Reservations:</h2>
+  <% @pendings = @bookings.where(confirmation: "pending") %>
+  <% @confirmed = @bookings.where(confirmation: "accepted") %>
+  <% @declined = @bookings.where(confirmation: "declined") %>
   <div class="bookings">
-    <% @bookings.each do |booking| %>
+    <% @pendings.each do |booking| %>
+    <hr>
+    <div class="bookings-card">
+      <% if booking.user.photo.attached? %>
+          <div class="avatar-bordered" id="booking-avatar"><%= cl_image_tag booking.user.photo.key %></div>
+      <% else %>
+          <div class="avatar-bordered" id="booking-avatar"><%= image_tag "https://media.istockphoto.com/vectors/user-profile-icon-vector-avatar-portrait-symbol-flat-shape-person-vector-id1270368615?k=20&m=1270368615&s=170667a&w=0&h=qpvA8Z6L164ZcKfIyOl-E8fKnfmRZ09Tks7WEoiLawA=" %></div>
+      <% end %>
+      <div class="bookings-card-mid">
+        <h2> <%= booking.user.first_name %> <%= booking.user.last_name %></h2>
+        <% if booking.confirmation == "pending" %>
+          <p>Wants to book from <%= booking.start_date %> till <%= booking.end_date %></p>
+        <% elsif booking.confirmation == "accepted" %>
+          <p>Booked from <%= booking.start_date %> till <%= booking.end_date %></p>
+        <% else %>
+          <p>was not wanted form <%= booking.start_date %> till <%= booking.end_date %></p>
+        <% end %>
+        <p> Preferences: <%= booking.comment %> </p>
+      </div>
+      <div class="buttons">
+        <div class="button-con">
+        <div class="btn btn-normal"><%= link_to "Back to all of my desks", ownerlistings_path%></div>
+        <% if booking.confirmation == "pending" %>
+          <div class="btn btn-cta"><%= link_to "Accept", booking_accept_path(booking), method: :patch %></div>
+          <div class="btn btn-cta"><%= link_to "Decline", booking_decline_path(booking), method: :patch %></div>
+        <% elsif booking.confirmation == "accepted" %>
+          <div class="btn btn-normal"><%= link_to "Decline", booking_decline_path(booking), method: :patch %></div>
+        <% else %>
+          <div class="btn btn-normal"><%= link_to "Accept", booking_accept_path(booking), method: :patch %></div>
+        <% end %>
+        </div>
+      <% if booking.confirmation == "pending" %>
+        <div class="sign">
+          <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/kbtmbyzy.json"
+              trigger="loop"
+              colors="primary:#99a799,secondary:#f9a051"
+              style="width:40px;height:40px">
+          </lord-icon>
+        </div>
+      <% elsif booking.confirmation == "accepted" %>
+        <div class="sign">
+        <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/jvihlqtw.json"
+              trigger="loop"
+              colors="primary:#99a799,secondary:#99a799"
+              style="width:40px;height:40px">
+          </lord-icon>
+        </div>
+      <% else %>
+        <div class="sign">
+        <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/zpmqckup.json"
+              trigger="loop"
+              colors="primary:#99a799,secondary:#f9a051"
+              style="width:40px;height:40px">
+          </lord-icon>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    <% end %>
+    <hr>
+  </div>
+  <h2>Confirmed Bookings:</h2>
+   <div class="bookings">
+    <% @confirmed.each do |booking| %>
+    <hr>
+    <div class="bookings-card">
+      <% if booking.user.photo.attached? %>
+          <div class="avatar-bordered" id="booking-avatar"><%= cl_image_tag booking.user.photo.key %></div>
+      <% else %>
+          <div class="avatar-bordered" id="booking-avatar"><%= image_tag "https://media.istockphoto.com/vectors/user-profile-icon-vector-avatar-portrait-symbol-flat-shape-person-vector-id1270368615?k=20&m=1270368615&s=170667a&w=0&h=qpvA8Z6L164ZcKfIyOl-E8fKnfmRZ09Tks7WEoiLawA=" %></div>
+      <% end %>
+      <div class="bookings-card-mid">
+        <h2> <%= booking.user.first_name %> <%= booking.user.last_name %></h2>
+        <% if booking.confirmation == "pending" %>
+          <p>Wants to book from <%= booking.start_date %> till <%= booking.end_date %></p>
+        <% elsif booking.confirmation == "accepted" %>
+          <p>Booked from <%= booking.start_date %> till <%= booking.end_date %></p>
+        <% else %>
+          <p>was not wanted form <%= booking.start_date %> till <%= booking.end_date %></p>
+        <% end %>
+        <p> Preferences: <%= booking.comment %> </p>
+      </div>
+      <div class="buttons">
+        <div class="button-con">
+        <div class="btn btn-normal"><%= link_to "Back to all of my desks", ownerlistings_path%></div>
+        <% if booking.confirmation == "pending" %>
+          <div class="btn btn-cta"><%= link_to "Accept", booking_accept_path(booking), method: :patch %></div>
+          <div class="btn btn-cta"><%= link_to "Decline", booking_decline_path(booking), method: :patch %></div>
+        <% elsif booking.confirmation == "accepted" %>
+          <div class="btn btn-normal"><%= link_to "Decline", booking_decline_path(booking), method: :patch %></div>
+        <% else %>
+          <div class="btn btn-normal"><%= link_to "Accept", booking_accept_path(booking), method: :patch %></div>
+        <% end %>
+        </div>
+      <% if booking.confirmation == "pending" %>
+        <div class="sign">
+          <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/kbtmbyzy.json"
+              trigger="loop"
+              colors="primary:#99a799,secondary:#f9a051"
+              style="width:40px;height:40px">
+          </lord-icon>
+        </div>
+      <% elsif booking.confirmation == "accepted" %>
+        <div class="sign">
+        <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/jvihlqtw.json"
+              trigger="loop"
+              colors="primary:#99a799,secondary:#99a799"
+              style="width:40px;height:40px">
+          </lord-icon>
+        </div>
+      <% else %>
+        <div class="sign">
+        <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/zpmqckup.json"
+              trigger="loop"
+              colors="primary:#99a799,secondary:#f9a051"
+              style="width:40px;height:40px">
+          </lord-icon>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    <% end %>
+    <hr>
+  </div>
+  <h2>Rejected Bookings:</h2>
+   <div class="bookings">
+    <% @declined.each do |booking| %>
     <hr>
     <div class="bookings-card">
       <% if booking.user.photo.attached? %>
