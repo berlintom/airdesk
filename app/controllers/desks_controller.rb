@@ -19,7 +19,7 @@ class DesksController < ApplicationController
     @desk.user = current_user
     @desk.save
     if @desk.save
-      redirect_to desks_path
+      redirect_to ownerlistings_path
     else
       render :new
     end
