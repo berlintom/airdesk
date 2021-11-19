@@ -4,10 +4,6 @@
 <% if @bookings.empty? %>
   <h3>You don´t have any bookings yet! </h3>
 <% else %>
-
-  <% @pendings = @bookings.where(confirmation: "pending") %>
-  <% @confirmed = @bookings.where(confirmation: "accepted") %>
-  <% @declined = @bookings.where(confirmation: "declined") %>
   <h2>Pending Reservations:</h2>
 
   <div class="bookings">
