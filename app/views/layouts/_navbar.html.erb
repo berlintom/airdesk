@@ -13,7 +13,9 @@ style=" fill:#F8B071;"><g transform="translate(0.516,0.516) scale(0.994,0.994)">
 
   <div class="nav-bar-links">
     <%= link_to "Book a desk", desks_path, class: "navbar-brand"%>
+    <%= link_to "Offer your desk", new_desk_path, class: "navbar-brand" %>
     <%= link_to "My desks", ownerlistings_path, class: "navbar-brand"%>
+    <%= link_to "My bookings", bookings_path, class: "navbar-brand" %>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -36,8 +38,6 @@ style=" fill:#F8B071;"><g transform="translate(0.516,0.516) scale(0.994,0.994)">
         <% end %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% if current_user %>
-            <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
-            <%= link_to "Offer your desk", new_desk_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           <% else %>
             <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %>
